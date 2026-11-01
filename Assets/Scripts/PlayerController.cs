@@ -4,6 +4,7 @@ using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
+    public GameManager gameManager;
     public float speed = 20.0f;
     public Rigidbody2D rb;
     public PlayerControl controls;
@@ -76,6 +77,14 @@ public class PlayerController : MonoBehaviour
         if (health <= 0)
         {
             Debug.Log("Корабль уничтожен!");
+            Destroy(gameObject);
+        }
+        if (health <= 0)
+        {
+            if (gameManager != null)
+            {
+                gameManager.GameOver();
+            }
             Destroy(gameObject);
         }
     }
