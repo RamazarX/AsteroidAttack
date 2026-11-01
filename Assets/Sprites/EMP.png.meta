@@ -103,10 +103,10 @@ TextureImporter:
       name: EMP_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 2400
-        height: 1792
+        x: 78
+        y: 27
+        width: 389
+        height: 367
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

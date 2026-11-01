@@ -103,10 +103,10 @@ TextureImporter:
       name: Medkit_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 2400
-        height: 1792
+        x: 101
+        y: 61
+        width: 384
+        height: 314
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

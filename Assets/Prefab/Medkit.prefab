@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6506271995372198728}
   - component: {fileID: 490917020206454716}
-  - component: {fileID: 5044577545547285023}
   - component: {fileID: 7072625609087814859}
   - component: {fileID: -1548969106250346289}
+  - component: {fileID: -8513420442908251177}
   m_Layer: 0
   m_Name: Medkit
   m_TagString: Untagged
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -79,8 +79,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 0.13590157, g: 1, b: 0, a: 1}
+  m_Sprite: {fileID: -7670083803364755745, guid: ba0cc633ce984514b91bbbb2905eedbc, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -90,43 +90,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!70 &5044577545547285023
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 715790269717325150}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
-  m_Direction: 0
 --- !u!50 &7072625609087814859
 Rigidbody2D:
   serializedVersion: 5
@@ -166,5 +129,115 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 892e8630cff662042a8fe71802c1df7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  minSpeed: 2
+  maxSpeed: 5
   rb: {fileID: 7072625609087814859}
+--- !u!60 &-8513420442908251177
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 715790269717325150}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3, y: 3.01}
+    newSize: {x: 1, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.04, y: -1.3199999}
+      - {x: 0.089999996, y: -1.29}
+      - {x: 0.14, y: -1.22}
+      - {x: 0.38, y: -1.14}
+      - {x: 0.47, y: -1.1}
+      - {x: 0.94, y: -0.91999996}
+      - {x: 1.09, y: -0.83}
+      - {x: 1.22, y: -0.84}
+      - {x: 1.28, y: -0.75}
+      - {x: 1.37, y: -0.71}
+      - {x: 1.51, y: -0.71}
+      - {x: 1.65, y: -0.65}
+      - {x: 1.77, y: -0.59999996}
+      - {x: 1.8399999, y: -0.51}
+      - {x: 1.9, y: -0.31}
+      - {x: 1.9, y: 0.06}
+      - {x: 1.92, y: 0.34}
+      - {x: 1.92, y: 0.59}
+      - {x: 1.73, y: 0.81}
+      - {x: 1.61, y: 0.88}
+      - {x: 1.51, y: 0.98999995}
+      - {x: 1.14, y: 1.3399999}
+      - {x: 1.14, y: 1.37}
+      - {x: 1.02, y: 1.5}
+      - {x: 0.78, y: 1.56}
+      - {x: 0.57, y: 1.56}
+      - {x: 0.34, y: 1.52}
+      - {x: 0.26, y: 1.4699999}
+      - {x: 0.25, y: 1.41}
+      - {x: 0.08, y: 1.4}
+      - {x: -0.04, y: 1.38}
+      - {x: -0.07, y: 1.3199999}
+      - {x: -1, y: 0.96999997}
+      - {x: -1.04, y: 1}
+      - {x: -1.13, y: 0.98999995}
+      - {x: -1.28, y: 0.84}
+      - {x: -1.36, y: 0.85999995}
+      - {x: -1.4399999, y: 0.87}
+      - {x: -1.77, y: 0.68}
+      - {x: -1.92, y: 0.45999998}
+      - {x: -1.92, y: 0.29}
+      - {x: -1.89, y: 0.19999999}
+      - {x: -1.92, y: 0.17}
+      - {x: -1.92, y: 0.04}
+      - {x: -1.91, y: -0.01}
+      - {x: -1.89, y: -0.22}
+      - {x: -1.92, y: -0.31}
+      - {x: -1.92, y: -0.44}
+      - {x: -1.9, y: -0.52}
+      - {x: -1.81, y: -0.62}
+      - {x: -1.77, y: -0.64}
+      - {x: -1.68, y: -0.71}
+      - {x: -1.52, y: -0.9}
+      - {x: -1.23, y: -1.25}
+      - {x: -1.04, y: -1.48}
+      - {x: -0.98999995, y: -1.51}
+      - {x: -0.66999996, y: -1.5699999}
+      - {x: -0.63, y: -1.5699999}
+      - {x: -0.59, y: -1.56}
+      - {x: -0.42, y: -1.49}
+      - {x: -0.22999999, y: -1.43}
+      - {x: -0.13, y: -1.35}
+  m_UseDelaunayMesh: 0

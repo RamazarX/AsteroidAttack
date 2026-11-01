@@ -3,8 +3,8 @@ guid: 23184aaed370fa84184b8005e86b4c23
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1793152481876806073
-    second: shatle_0
+      213: 8343366161810491145
+    second: Shatle_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: shatle_0
+      name: Shatle_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 900
-        height: 720
+        x: 57
+        y: 7
+        width: 445
+        height: 438
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7467f9971517d17e0800000000000000
-      internalID: -1793152481876806073
+      spriteID: 9078ab1b15799c370800000000000000
+      internalID: 8343366161810491145
       vertices: []
       indices: 
       edges: []

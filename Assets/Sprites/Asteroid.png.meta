@@ -103,10 +103,10 @@ TextureImporter:
       name: Asteroid_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 2304
-        height: 1844
+        x: 92
+        y: 33
+        width: 374
+        height: 379
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

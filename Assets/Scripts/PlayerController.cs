@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public GameManager gameManager;
     public float speed = 20.0f;
+    public float rotationSpeed = 10f;
     public Rigidbody2D rb;
     public PlayerControl controls;
     public Vector2 movementInput;
@@ -13,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public int score = 0;
     public int empCharges = 0;
     public float empRadius = 8f;
+    public GameObject empWavePrefab;
 
     public TextMeshProUGUI healthText;
     public TextMeshProUGUI scoreText;
@@ -55,7 +57,7 @@ public class PlayerController : MonoBehaviour
         }
         if (movementInput != Vector2.zero)
         {
-            transform.up = movementInput;
+            transform.up = Vector3.Slerp(transform.up, movementInput, rotationSpeed * Time.deltaTime);
         }
 
         if ((Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame) || (Touchscreen.current != null && Touchscreen.current.primaryTouch.press.wasPressedThisFrame))
@@ -122,6 +124,7 @@ public class PlayerController : MonoBehaviour
         {
             empCharges--;
             UpdateUI();
+            Instantiate(empWavePrefab, transform.position, Quaternion.identity);
             Collider2D[] hitObjects = Physics2D.OverlapCircleAll(transform.position, empRadius);
             foreach (Collider2D hit in hitObjects)
             {
