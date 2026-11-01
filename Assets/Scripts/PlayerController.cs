@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rb;
     public PlayerControl controls;
     public Vector2 movementInput;
+    public int health = 100;
 
     // initialize the controls
     void Awake()
@@ -45,4 +46,16 @@ public class PlayerController : MonoBehaviour
     {
         rb.AddForce(movementInput * speed, ForceMode2D.Force);
     }
+
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+        Debug.Log("Ай! Осталось жизней: " + health);
+        if (health <= 0)
+        {
+            Debug.Log("Корабль уничтожен!");
+            Destroy(gameObject);
+        }
+    }
+
 }
