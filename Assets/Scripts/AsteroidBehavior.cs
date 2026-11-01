@@ -2,8 +2,9 @@ using UnityEngine;
 
 public class AsteroidBehavior : MonoBehaviour
 {
-    public float speed = 5f;
-    private Rigidbody2D rb;
+    public float minSpeed = 3f;
+    public float maxSpeed = 7f;
+    public Rigidbody2D rb;
 
     void Start()
     {
@@ -12,7 +13,8 @@ public class AsteroidBehavior : MonoBehaviour
         if(player != null)
         {
             Vector2 direction = (player.transform.position - transform.position).normalized;
-            rb.linearVelocity = direction * speed;
+            float randomSpeed = Random.Range(minSpeed, maxSpeed);
+            rb.linearVelocity = direction * randomSpeed;
         }
         Destroy(gameObject, 10f);
     }

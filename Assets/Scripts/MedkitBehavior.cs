@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class MedkitBehavior : MonoBehaviour
 {
-    public float speed = 3f;
+    public float minSpeed = 2f;
+    public float maxSpeed = 5f;
     public Rigidbody2D rb;
 
     void Start()
@@ -12,7 +13,8 @@ public class MedkitBehavior : MonoBehaviour
         if (player != null)
         {
             Vector2 direction = (player.transform.position - transform.position).normalized;
-            rb.linearVelocity = direction * speed;
+            float randomSpeed = Random.Range(minSpeed, maxSpeed);
+            rb.linearVelocity = direction * randomSpeed;
         }
         Destroy(gameObject, 10f);
     }

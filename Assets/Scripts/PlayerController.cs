@@ -10,9 +10,12 @@ public class PlayerController : MonoBehaviour
     public Vector2 movementInput;
     public int health = 100;
     public int score = 0;
+    public int empCharges = 0;
+    public float empRadius = 8f;
 
     public TextMeshProUGUI healthText;
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI empChargeText;
 
     void Start()
     {
@@ -53,6 +56,11 @@ public class PlayerController : MonoBehaviour
         {
             transform.up = movementInput;
         }
+
+        if ((Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame) || (Touchscreen.current != null && Touchscreen.current.primaryTouch.press.wasPressedThisFrame))
+        {
+            UseEMP();
+        }
     }
 
     // Update is called once per second
@@ -76,7 +84,12 @@ public class PlayerController : MonoBehaviour
     {
         score += points;
         UpdateUI();
-        Debug.Log("Î÷êè: " + score);
+    }
+
+    public void AddEmp(int amount)
+    {
+        empCharges += amount;
+        UpdateUI();
     }
 
     void UpdateUI()
@@ -89,6 +102,25 @@ public class PlayerController : MonoBehaviour
         {
             scoreText.text = "Î÷êè: " + score;
         }
+        if (empChargeText != null)
+        {
+            empChargeText.text = "ÝÌÈ: " + empCharges;
+        }
     }
-
+    void UseEMP()
+    {
+        if (empCharges > 0)
+        {
+            empCharges--;
+            UpdateUI();
+            Collider2D[] hitObjects = Physics2D.OverlapCircleAll(transform.position, empRadius);
+            foreach (Collider2D hit in hitObjects)
+            {
+                if (hit.GetComponent<AsteroidBehavior>() != null)
+                {
+                    Destroy(hit.gameObject);
+                }
+            }
+        }
+    }
 }
