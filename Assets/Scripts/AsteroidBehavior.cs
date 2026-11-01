@@ -8,15 +8,13 @@ public class AsteroidBehavior : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.linearVelocity = Vector2.down * speed;
-    }
-
-    void Update()
-    {
-        if(transform.position.y < -10f)
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if(player != null)
         {
-            Destroy(gameObject);
+            Vector2 direction = (player.transform.position - transform.position).normalized;
+            rb.linearVelocity = direction * speed;
         }
+        Destroy(gameObject, 10f);
     }
 
     void OnTriggerEnter2D(Collider2D collision)

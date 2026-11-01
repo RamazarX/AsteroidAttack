@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -8,6 +9,15 @@ public class PlayerController : MonoBehaviour
     public PlayerControl controls;
     public Vector2 movementInput;
     public int health = 100;
+    public int score = 0;
+
+    public TextMeshProUGUI healthText;
+    public TextMeshProUGUI scoreText;
+
+    void Start()
+    {
+        UpdateUI();
+    }
 
     // initialize the controls
     void Awake()
@@ -39,6 +49,10 @@ public class PlayerController : MonoBehaviour
             Vector3 v3 = Accelerometer.current.acceleration.ReadValue();
             movementInput = new Vector2(v3.x, v3.y);
         }
+        if (movementInput != Vector2.zero)
+        {
+            transform.up = movementInput;
+        }
     }
 
     // Update is called once per second
@@ -50,11 +64,30 @@ public class PlayerController : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
-        Debug.Log("Ай! Осталось жизней: " + health);
+        UpdateUI();
         if (health <= 0)
         {
             Debug.Log("Корабль уничтожен!");
             Destroy(gameObject);
+        }
+    }
+
+    public void AddScore(int points)
+    {
+        score += points;
+        UpdateUI();
+        Debug.Log("Очки: " + score);
+    }
+
+    void UpdateUI()
+    {
+        if (healthText != null)
+        {
+            healthText.text = "Жизни: " + health;
+        }
+        if (scoreText != null)
+        {
+            scoreText.text = "Очки: " + score;
         }
     }
 
